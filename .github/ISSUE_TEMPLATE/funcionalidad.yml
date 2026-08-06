@@ -1,0 +1,29 @@
+name: Funcionalidad
+description: Proponer una mejora del sitio o de una colección
+title: "[Funcionalidad] "
+labels: ["mejora"]
+body:
+  - type: textarea
+    id: problema
+    attributes:
+      label: Necesidad
+      description: ¿Qué problema de una persona usuaria queremos resolver?
+    validations:
+      required: true
+  - type: textarea
+    id: resultado
+    attributes:
+      label: Resultado esperado
+    validations:
+      required: true
+  - type: textarea
+    id: criterios
+    attributes:
+      label: Criterios de aceptación
+      placeholder: "- [ ] ..."
+    validations:
+      required: true
+  - type: textarea
+    id: datos
+    attributes:
+      label: Implicaciones de datos, fuentes o reconocimiento

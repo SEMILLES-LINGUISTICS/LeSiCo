@@ -1,0 +1,21 @@
+name: Contenido o corrección
+description: Proponer textos, referencias o correcciones del portal
+title: "[Contenido] "
+labels: ["contenido"]
+body:
+  - type: textarea
+    id: ubicacion
+    attributes:
+      label: Página o registro
+    validations:
+      required: true
+  - type: textarea
+    id: propuesta
+    attributes:
+      label: Cambio propuesto
+    validations:
+      required: true
+  - type: textarea
+    id: fuente
+    attributes:
+      label: Fuente o justificación

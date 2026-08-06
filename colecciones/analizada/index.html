@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Colección analizada de LeSiCo: conceptos, alternativas léxicas, variantes fonológicas y fuentes documentadas de la LSC.">
+  <title>Colección analizada | LeSiCo</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <a class="skip-link" href="#buscador">Saltar a la búsqueda</a>
+  <nav class="barra-portal" aria-label="Navegación de LeSiCo">
+    <a href="../../">← Inicio de LeSiCo</a>
+    <a href="../../como-usar/">Cómo usar esta colección</a>
+  </nav>
+  <header class="encabezado">
+    <div>
+      <p class="sobrelinea">SEMILLES</p>
+      <h1>Colección analizada de LeSiCo</h1>
+      <p class="subtitulo">Conceptos, alternativas y relaciones de variación construidos a partir de vocabulario documentado en distintas fuentes</p>
+    </div>
+    <div class="metadatos-catalogo">
+      <p id="resumen-catalogo" class="resumen-catalogo"></p>
+      <p id="fecha-actualizacion" class="fecha"></p>
+    </div>
+  </header>
+
+  <section class="nota-metodologica" aria-label="Sobre la base de datos">
+    <p>
+      Esta base de datos muestra conceptos, alternativas léxicas, variantes fonológicas y
+      las fuentes en las que se ha documentado el vocabulario. Su clasificación es
+      descriptiva, se encuentra en desarrollo y no pretende establecer formas únicas de uso
+      en la Lengua de Señas Colombiana.
+    </p>
+  </section>
+
+  <main class="aplicacion">
+    <aside class="panel-conceptos" aria-label="Conceptos">
+      <label for="buscador" class="etiqueta-buscador">Buscar en la base de datos</label>
+      <input
+        id="buscador"
+        class="buscador"
+        type="search"
+        placeholder="Concepto, alternativa, glosa o fuente"
+        autocomplete="off"
+      >
+
+      <section class="filtros" aria-label="Filtros de la base de datos">
+        <div class="grupo-filtro">
+          <span class="etiqueta-filtro">Campo semántico</span>
+          <details id="selector-campos" class="selector-campos">
+            <summary id="resumen-campos">Seleccionar campo…</summary>
+            <div class="menu-campos">
+              <label for="buscador-campos" class="etiqueta-busqueda-campos">Buscar campo semántico</label>
+              <input
+                id="buscador-campos"
+                class="buscador-campos"
+                type="search"
+                placeholder="Escribir para filtrar"
+                autocomplete="off"
+              >
+              <div
+                id="lista-campos"
+                class="lista-campos"
+                role="group"
+                aria-label="Campos semánticos disponibles"
+              ></div>
+            </div>
+          </details>
+          <div id="campos-seleccionados" class="campos-seleccionados" aria-live="polite"></div>
+        </div>
+
+        <div class="grupo-filtro">
+          <label for="filtro-variacion" class="etiqueta-filtro">Tipo de variación</label>
+          <select id="filtro-variacion" class="selector-variacion">
+            <option value="todas">Todas</option>
+            <option value="sin_variacion">Sin variación registrada</option>
+            <option value="solo_lexica">Solo variación léxica</option>
+            <option value="solo_fonologica">Solo variación fonológica</option>
+            <option value="lexica_y_fonologica">Variación léxica y fonológica</option>
+          </select>
+        </div>
+
+        <label class="filtro-casilla" for="filtro-video">
+          <input id="filtro-video" type="checkbox">
+          <span>Solo conceptos con video</span>
+        </label>
+
+        <button id="limpiar-filtros" class="limpiar-filtros" type="button" disabled>
+          Limpiar filtros
+        </button>
+      </section>
+
+      <p id="contador-resultados" class="contador"></p>
+      <nav id="lista-conceptos" class="lista-conceptos"></nav>
+    </aside>
+
+    <section id="panel-detalle" class="panel-detalle" aria-live="polite">
+      <div class="estado-inicial">
+        <h2>Cargando base de datos…</h2>
+      </div>
+    </section>
+  </main>
+
+  <template id="plantilla-error">
+    <div class="mensaje-error">
+      <h2>No fue posible cargar la base de datos</h2>
+      <p></p>
+    </div>
+  </template>
+
+  <script src="aplicacion.js" defer></script>
+</body>
+</html>
