@@ -1,6 +1,6 @@
 # LeSiCo
 
-Portal público de la base de datos léxica de referencia de la Lengua de Señas Colombiana, un proyecto de SEMILLES.
+Portal público de la Base de Datos Léxica de Referencia de la Lengua de Señas Colombiana (LSC): LeSiCo / SEMILLES.
 
 ## Estado
 
