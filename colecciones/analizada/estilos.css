@@ -1,8 +1,20 @@
 :root {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #1f2933;
-  background: #f4f6f8;
-  line-height: 1.45;
+  --ink: #172a2d;
+  --muted: #52676a;
+  --paper: #f7f5ef;
+  --surface: #ffffff;
+  --brand: #4472c4;
+  --chrome: #3a4a53;
+  --secondary: #1e6c93;
+  --accent: #f4a261;
+  --line: #d8dfdc;
+  --soft: #e6f0ed;
+  --radius: 1rem;
+  --shadow: 0 16px 45px rgba(23, 42, 45, 0.1);
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.55;
 }
 
 * {
@@ -11,6 +23,11 @@
 
 body {
   margin: 0;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
 }
 
 .skip-link {
@@ -33,15 +50,22 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 0.5rem 1rem;
-  padding: 0.55rem 1.5rem;
-  background: #16486d;
+  align-items: center;
+  min-height: 64px;
+  padding: 0.8rem max(1.25rem, calc((100vw - 1180px) / 2));
+  background: var(--chrome);
   color: #ffffff;
   font-size: 0.86rem;
 }
 
 .barra-portal a {
   color: inherit;
+  font-weight: 700;
   text-underline-offset: 0.18em;
+}
+
+.barra-portal a:hover {
+  text-decoration-thickness: 2px;
 }
 
 button,
@@ -53,28 +77,35 @@ input {
   display: flex;
   justify-content: space-between;
   align-items: end;
-  gap: 1rem;
-  padding: 1.25rem 1.5rem;
-  background: #ffffff;
-  border-bottom: 1px solid #d9e0e6;
+  gap: 2rem;
+  padding: clamp(2.5rem, 6vw, 5rem) max(1.25rem, calc((100vw - 1180px) / 2));
+  background: var(--brand);
+  color: white;
 }
 
 .encabezado h1 {
   margin: 0;
-  font-size: clamp(1.35rem, 2.5vw, 2rem);
+  max-width: 800px;
+  font-size: clamp(2.2rem, 5vw, 4.4rem);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
 }
 
 .subtitulo {
   max-width: 760px;
   margin: 0.35rem 0 0;
-  color: #52616b;
-  font-size: 0.95rem;
+  color: #edf3ff;
+  font-size: clamp(1rem, 2vw, 1.2rem);
 }
 
 .sobrelinea {
-  margin: 0 0 0.2rem;
+  display: inline-block;
+  margin: 0 0 0.65rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 0.4rem;
+  background: var(--chrome);
   font-size: 0.78rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.12em;
 }
 
@@ -85,7 +116,7 @@ input {
 .resumen-catalogo,
 .fecha {
   margin: 0;
-  color: #52616b;
+  color: #edf3ff;
   font-size: 0.88rem;
 }
 
@@ -96,13 +127,19 @@ input {
 .aplicacion {
   display: grid;
   grid-template-columns: minmax(270px, 30%) minmax(0, 1fr);
+  gap: 1.25rem;
   min-height: calc(100vh - 96px);
+  padding: 1.25rem max(1rem, calc((100vw - 1440px) / 2)) 3rem;
+  background: var(--paper);
 }
 
 .panel-conceptos {
-  padding: 1rem;
-  background: #ffffff;
-  border-right: 1px solid #d9e0e6;
+  align-self: start;
+  padding: 1.2rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
 .etiqueta-buscador {
@@ -115,12 +152,13 @@ input {
   width: 100%;
   padding: 0.75rem 0.85rem;
   border: 1px solid #9baab4;
-  border-radius: 0.45rem;
+  border-radius: 0.65rem;
+  background: #fbfcfc;
 }
 
 .buscador:focus {
-  outline: 3px solid rgba(32, 96, 145, 0.2);
-  border-color: #206091;
+  outline: 3px solid rgba(30, 108, 147, 0.2);
+  border-color: var(--secondary);
 }
 
 .contador {
@@ -154,11 +192,11 @@ input {
 
 .boton-concepto:hover,
 .boton-concepto.activo {
-  background: #e8f0f5;
+  background: var(--soft);
 }
 
 .boton-concepto.activo {
-  box-shadow: inset 4px 0 0 #206091;
+  box-shadow: inset 4px 0 0 var(--secondary);
 }
 
 .nombre-concepto {
@@ -181,7 +219,7 @@ input {
 
 .panel-detalle {
   min-width: 0;
-  padding: 1.5rem;
+  padding: 0.25rem;
 }
 
 .estado-inicial,
@@ -190,8 +228,9 @@ input {
   margin: 3rem auto;
   padding: 2rem;
   background: #ffffff;
-  border: 1px solid #d9e0e6;
-  border-radius: 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
 .cabecera-concepto {
@@ -212,7 +251,7 @@ input {
 .etiqueta {
   display: inline-block;
   padding: 0.32rem 0.58rem;
-  background: #e8f0f5;
+  background: var(--soft);
   border-radius: 999px;
   font-size: 0.86rem;
 }
@@ -225,10 +264,11 @@ input {
 
 .bloque {
   margin-bottom: 1.25rem;
-  padding: 1.1rem;
-  background: #ffffff;
-  border: 1px solid #d9e0e6;
-  border-radius: 0.65rem;
+  padding: clamp(1rem, 2.5vw, 1.4rem);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 28px rgba(23, 42, 45, 0.07);
 }
 
 .bloque h3,
@@ -257,16 +297,16 @@ input {
   align-items: center;
   gap: 0.35rem;
   padding: 0.5rem 0.75rem;
-  border: 1px solid #206091;
-  border-radius: 0.4rem;
+  border: 1px solid var(--secondary);
+  border-radius: 999px;
   background: #ffffff;
-  color: #16486d;
+  color: var(--secondary);
   cursor: pointer;
 }
 
 .boton-variante:hover,
 .boton-variante.activo {
-  background: #206091;
+  background: var(--secondary);
   color: #ffffff;
 }
 
@@ -327,8 +367,9 @@ input {
 
 .dato {
   padding: 0.8rem;
-  background: #f7f9fa;
-  border-radius: 0.45rem;
+  background: #f6f8f7;
+  border: 1px solid var(--line);
+  border-radius: 0.65rem;
 }
 
 .dato dt {
@@ -358,8 +399,8 @@ input {
 }
 
 .boton-pestana.activo {
-  border-bottom-color: #206091;
-  color: #16486d;
+  border-bottom-color: var(--secondary);
+  color: var(--secondary);
   font-weight: 700;
 }
 
@@ -401,6 +442,7 @@ th {
   .encabezado {
     align-items: start;
     flex-direction: column;
+    padding-block: 2.5rem;
   }
 
   .metadatos-catalogo {
@@ -409,11 +451,12 @@ th {
 
   .aplicacion {
     grid-template-columns: 1fr;
+    gap: 0.85rem;
+    padding: 0.85rem 0.75rem 2rem;
   }
 
   .panel-conceptos {
-    border-right: 0;
-    border-bottom: 1px solid #d9e0e6;
+    border: 1px solid var(--line);
   }
 
   .lista-conceptos {
@@ -426,10 +469,10 @@ th {
 }
 
 .nota-metodologica {
-  padding: 0.8rem 1.5rem;
-  background: #eef4f7;
-  border-bottom: 1px solid #d9e0e6;
-  color: #334e5c;
+  padding: 1rem max(1.25rem, calc((100vw - 1180px) / 2));
+  background: #e8eef9;
+  border-bottom: 1px solid #ccd7ed;
+  color: #2c405f;
 }
 
 .nota-metodologica p {
@@ -480,7 +523,7 @@ select {
   position: relative;
   padding: 0.68rem 2.2rem 0.68rem 0.75rem;
   border: 1px solid #9baab4;
-  border-radius: 0.45rem;
+  border-radius: 0.65rem;
   background: #ffffff;
   cursor: pointer;
   list-style: none;
@@ -503,14 +546,14 @@ select {
 }
 
 .selector-campos[open] summary {
-  border-color: #206091;
+  border-color: var(--secondary);
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
 
 .menu-campos {
   padding: 0.7rem;
-  border: 1px solid #206091;
+  border: 1px solid var(--secondary);
   border-top: 0;
   border-bottom-left-radius: 0.45rem;
   border-bottom-right-radius: 0.45rem;
@@ -540,8 +583,8 @@ select {
 
 .buscador-campos:focus,
 .selector-variacion:focus {
-  outline: 3px solid rgba(32, 96, 145, 0.2);
-  border-color: #206091;
+  outline: 3px solid rgba(30, 108, 147, 0.2);
+  border-color: var(--secondary);
 }
 
 .lista-campos {
@@ -563,7 +606,7 @@ select {
 }
 
 .opcion-campo:hover {
-  background: #eef4f7;
+  background: var(--soft);
 }
 
 .opcion-campo input {
@@ -594,8 +637,8 @@ select {
   padding: 0.3rem 0.5rem;
   border: 0;
   border-radius: 999px;
-  background: #e8f0f5;
-  color: #16486d;
+  background: var(--soft);
+  color: var(--secondary);
   cursor: pointer;
   font-size: 0.78rem;
   text-align: left;
@@ -629,7 +672,7 @@ select {
   border: 1px solid #9baab4;
   border-radius: 0.4rem;
   background: #ffffff;
-  color: #16486d;
+  color: var(--secondary);
   cursor: pointer;
   font-size: 0.85rem;
 }
