@@ -31,9 +31,10 @@ Relaciona cada solicitud de cambio con un issue y resume archivos, pruebas, capt
 ## Convenciones de Git, Issues y Pull Requests
 
 ### Títulos de issues
-- Comienzan con minúscula
-- Formato: `"acción: descripción breve"`
-- Ejemplo: `"ajustar esquema de colores: encabezado brillante y mejora visual"`
+- Todo el título se escribe en minúscula.
+- Comienza con un prefijo en inglés y entre corchetes: `[feature]`, `[fix]`, `[docs]`, `[chore]` u otro equivalente.
+- Formato: `"[prefijo] descripción breve"`
+- Ejemplo: `"[feature] ajustar esquema de colores"`
 
 ### Commits
 - Tipo de commit en minúscula: `feat:`, `fix:`, `docs:`, etc.
@@ -41,9 +42,9 @@ Relaciona cada solicitud de cambio con un issue y resume archivos, pruebas, capt
 - Ejemplo: `feat: esquema de colores brillante con L-S-C resaltadas`
 
 ### Pull Requests
-- Título sigue el formato del issue (minúscula)
+- El título sigue el formato y el prefijo del issue; se mantiene completamente en minúscula.
 - Body resume cambios, archivos modificados y verificación realizada
-- Ejemplo: `"aplicar esquema de colores brillante con L-S-C resaltadas"`
+- Ejemplo: `"[feature] ajustar esquema de colores"`
 
 ### Ramas (branches)
 - Formato: `feature/número-descripción-en-kebab-case`
