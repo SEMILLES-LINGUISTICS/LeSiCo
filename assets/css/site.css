@@ -5,7 +5,7 @@
   --surface: #ffffff;
   --brand: #0087be;
   --brand-dark: #3a4a52;
-  --accent: #0087be;
+  --accent: #f4a261;
   --line: #d8dfdc;
   --soft: #e6f0ed;
   --radius: 1rem;
@@ -60,6 +60,7 @@ img, iframe { max-width: 100%; }
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.08em;
+  overflow: hidden;
 }
 .brand strong, .brand small { display: block; }
 .brand strong { font-size: 1.18rem; line-height: 1.1; }
@@ -100,7 +101,7 @@ img, iframe { max-width: 100%; }
   min-height: 430px;
   padding: clamp(3.5rem, 8vw, 7.5rem) max(1.25rem, calc((100vw - 1180px) / 2));
   overflow: hidden;
-  background: var(--brand-dark);
+  background: var(--brand);
   color: white;
 }
 .hero::after {
@@ -189,6 +190,13 @@ img, iframe { max-width: 100%; }
 .button-primary { background: var(--brand); color: white; }
 .button-outline { border: 1px solid var(--brand); color: var(--brand-dark); }
 
+<<<<<<< HEAD
+.brand-mark-char-highlight {
+  font-size: 0.88rem;
+  font-weight: 900;
+}
+=======
+>>>>>>> origin/main
 
 @media (max-width: 760px) {
   .site-header { align-items: flex-start; }
