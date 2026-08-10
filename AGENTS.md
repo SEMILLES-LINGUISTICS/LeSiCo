@@ -27,3 +27,24 @@ Prueba además el Home y la colección analizada en escritorio y móvil antes de
 ## Entrega
 
 Relaciona cada solicitud de cambio con un issue y resume archivos, pruebas, capturas y decisiones pendientes. No copies chats completos como documentación del proyecto.
+
+## Convenciones de Git, Issues y Pull Requests
+
+### Títulos de issues
+- Comienzan con minúscula
+- Formato: `"acción: descripción breve"`
+- Ejemplo: `"ajustar esquema de colores: encabezado brillante y mejora visual"`
+
+### Commits
+- Tipo de commit en minúscula: `feat:`, `fix:`, `docs:`, etc.
+- Descripción en minúscula
+- Ejemplo: `feat: esquema de colores brillante con L-S-C resaltadas`
+
+### Pull Requests
+- Título sigue el formato del issue (minúscula)
+- Body resume cambios, archivos modificados y verificación realizada
+- Ejemplo: `"aplicar esquema de colores brillante con L-S-C resaltadas"`
+
+### Ramas (branches)
+- Formato: `feature/número-descripción-en-kebab-case`
+- Ejemplo: `feature/5-esquema-colores-brillante`
