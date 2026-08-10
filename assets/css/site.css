@@ -3,9 +3,9 @@
   --muted: #52676a;
   --paper: #f7f5ef;
   --surface: #ffffff;
-  --brand: #126a6b;
-  --brand-dark: #0b4c50;
-  --accent: #d9a441;
+  --brand: #0087be;
+  --brand-dark: #3a4a52;
+  --accent: #0087be;
   --line: #d8dfdc;
   --soft: #e6f0ed;
   --radius: 1rem;
@@ -188,6 +188,7 @@ img, iframe { max-width: 100%; }
 .page-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
 .button-primary { background: var(--brand); color: white; }
 .button-outline { border: 1px solid var(--brand); color: var(--brand-dark); }
+
 
 @media (max-width: 760px) {
   .site-header { align-items: flex-start; }
