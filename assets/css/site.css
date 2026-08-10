@@ -190,10 +190,13 @@ img, iframe { max-width: 100%; }
 .button-primary { background: var(--brand); color: white; }
 .button-outline { border: 1px solid var(--brand); color: var(--brand-dark); }
 
+<<<<<<< HEAD
 .brand-mark-char-highlight {
   font-size: 0.88rem;
   font-weight: 900;
 }
+=======
+>>>>>>> origin/main
 
 @media (max-width: 760px) {
   .site-header { align-items: flex-start; }
